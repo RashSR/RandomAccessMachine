@@ -55,7 +55,6 @@ public class RandomAccessMachine {
 				programmCounter++;
 				i = programmCounter - 1;
 				calculateInstruction(instruction, addressIndex);
-				
 			}
 		}
 	}
@@ -143,6 +142,14 @@ public class RandomAccessMachine {
 			System.out.println("[SUB] I calculate " + getAccumulator() + " - " + addresses.get(addressIndex) + ".");
 			setAccumulator(getAccumulator() - addresses.get(addressIndex));
 			break;
+		case INC:
+			System.out.println("[INC] I increment the value of the address " + addressIndex + ".");
+			addresses.set(addressIndex, addresses.get(addressIndex) + 1);
+			break;
+		case DEC:
+			System.out.println("[DEC] I decrement the value of the address " + addressIndex + ".");
+			addresses.set(addressIndex, addresses.get(addressIndex) - 1);
+			break;
 		default:
 			break; 
 		}
@@ -184,6 +191,10 @@ public class RandomAccessMachine {
 			return Instruction.JGZ;
 		case "11":
 			return Instruction.JGE;
+		case "12":
+			return Instruction.INC;
+		case "13":
+			return Instruction.DEC;
 		default:
 			return null;
 		}

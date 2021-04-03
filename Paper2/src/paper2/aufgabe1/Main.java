@@ -21,7 +21,11 @@ public class Main {
 				
 				+ "0902" //Gib das Endergebnis(Adresse 2) aus.
 				+ "0A99"; //Programmende
+		input = "06000702080105010C09010207020B0309020A99";
+		input = "0802130209020A99";
 		ra.input(input);
 	}
 
 }
+
+
